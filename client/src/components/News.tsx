@@ -2,6 +2,28 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import 'isomorphic-fetch';
 
+type Article = {
+  author: string;
+  content: string;
+  description: string;
+  publishedAt: string;
+  source: {
+    id: string;
+    name: string;
+  };
+  title: string;
+  url: string;
+  urlToImage: string | null;
+};
+
+type NewsProps = {
+  path?: string;
+};
+
+type NewsState = {
+  articles: Array<Article>;
+};
+
 const NewsContainer = styled.div`
   overflow: scroll;
   height: 100%;
@@ -13,8 +35,8 @@ const NewsTitle = styled.div`
   margin: 32px;
 `;
 
-class News extends Component {
-  constructor(props) {
+class News extends Component<NewsProps, NewsState> {
+  constructor(props: NewsProps) {
     super(props);
     this.state = {
       articles: []
@@ -31,7 +53,7 @@ class News extends Component {
     const { articles } = this.state;
     return (
       <NewsContainer>
-        {articles.map((article, i) => (
+        {articles.map((article: Article, i: number) => (
           <NewsTitle key={i}>{article.title}</NewsTitle>
         ))}
       </NewsContainer>

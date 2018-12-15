@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { format } from 'date-fns';
 
+type TimeProps = { path?: string };
+
+type TimeState = {
+  now: number;
+};
+
 const Clock = styled.div`
   font-size: 176px;
   font-weight: 700;
@@ -24,22 +30,23 @@ const CenteredPanel = styled.div`
   width: 100%;
 `;
 
-class Time extends Component {
-  constructor(props) {
+class Time extends Component<TimeProps, TimeState> {
+  timerId?: number;
+  constructor(props: TimeProps) {
     super(props);
     this.state = {
       now: Date.now()
     };
   }
   componentDidMount() {
-    this.timerId = setInterval(() => {
+    this.timerId = window.setInterval(() => {
       this.setState({
         now: Date.now()
       });
     }, 1000);
   }
   componentWillUnmount() {
-    clearInterval(this.timerId);
+    window.clearInterval(this.timerId);
   }
   render() {
     const { now } = this.state;
@@ -51,5 +58,4 @@ class Time extends Component {
     );
   }
 }
-
 export default Time;

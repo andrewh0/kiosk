@@ -13,7 +13,7 @@ const StyledRouter = styled(Router)`
   height: 100%;
 `;
 
-const App = _props => (
+const App = (_props: {}) => (
   <StyledRouter>
     <Home path="/" />
     <Home path="/settings" />

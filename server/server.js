@@ -33,7 +33,10 @@ app.get('/api/weather', (req, res) => {
   fetch(`https://api.darksky.net/forecast/${DARK_SKY_API_KEY}/${LONG_LAT}`)
     .then(apiResponse => apiResponse.json())
     .then(data => {
-      res.json(data);
+      res.json({
+        daily: data.daily,
+        currently: data.currently
+      });
     });
 });
 

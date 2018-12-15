@@ -16,7 +16,6 @@ const Panels = styled.div`
 `;
 
 const Panel = styled.div`
-  // border: 1px solid white;
   background-color: black;
   width: 50%;
   height: 50%;
@@ -25,7 +24,7 @@ const Panel = styled.div`
   overflow: scroll;
 `;
 
-const Home = _props => (
+const Home = (_props: { path: string }) => (
   <Panels>
     <Panel>
       <Time />
@@ -41,5 +40,4 @@ const Home = _props => (
     </Panel>
   </Panels>
 );
-
 export default Home;

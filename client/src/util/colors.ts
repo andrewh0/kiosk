@@ -1,14 +1,14 @@
-export const AQI_CATEGORY_COLORS = {
-  1: '#00E400',
-  2: '#FFD400',
-  3: '#FF7E00',
-  4: '#FF0000',
-  5: '#8F3F97',
-  6: '#660000'
-}; // Good // Moderate // Unhealthy for Sensitive Groups // Unhealthy // Very Unhealthy // Hazardous
+export const AQI_CATEGORY_COLORS: { [number: number]: string } = {
+  1: '#00E400', // Good
+  2: '#FFD400', // Moderate
+  3: '#FF7E00', // Unhealthy for Sensitive Groups
+  4: '#FF0000', // Unhealthy
+  5: '#8F3F97', // Very Unhealthy
+  6: '#660000' // Hazardous
+};
 
 // https://www.colorbox.io/#steps=6#hue_start=216#hue_end=216#hue_curve=easeOutQuad#sat_start=4#sat_end=4#sat_curve=easeOutQuad#sat_rate=23#lum_start=100#lum_end=9#lum_curve=easeOutQuad
-export const GRAYSCALE_COLORS = [
+export const GRAYSCALE_COLORS: Array<string> = [
   '#fdfeff',
   '#f2f3f5',
   '#dbdcdd',
