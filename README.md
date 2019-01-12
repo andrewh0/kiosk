@@ -17,7 +17,7 @@ cd server
 yarn start
 ```
 
-In a separate terminal , start the webpack server by navigating to the `client` folder:
+In a separate terminal, start the webpack server by navigating to the `client` folder:
 ```
 cd client
 yarn start
