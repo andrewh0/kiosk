@@ -1,44 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the code for the touchscreen kiosk I made with my Raspberry Pi. [I talked about it on Twitter](https://twitter.com/andrewlho_codes/status/1068685640118689792).
 
-## Available Scripts
 
-In the project directory, you can run:
+![Raspberry Pi Kiosk](https://pbs.twimg.com/media/DtS77IeUwAAs0Cx.jpg "Raspberry Pi Kiosk")
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Development
+You'll need your own API keys from the following APIs:
+- [Dark Sky (weather)](https://darksky.net/forecast/40.7127,-74.0059/us12/en)
+- [News API (news)](https://newsapi.org/)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Add these API keys along with some other configuration strings to a file called `config.js` in the `server` folder, using `config.example.js` as an example.
 
-### `npm test`
+Start the Node server by navigating to the `server` folder:
+```
+cd server
+yarn start
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In a separate terminal , start the webpack server by navigating to the `client` folder:
+```
+cd client
+yarn start
+```
 
-### `npm run build`
+You can find the kiosk running at `localhost:3000`.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Technologies Used
+- Create React App
+- TypeScript
+- styled-components
+- Node
+- Express
+- Prettier
